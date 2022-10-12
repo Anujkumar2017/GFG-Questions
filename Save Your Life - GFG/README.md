@@ -1,7 +1,7 @@
 # Save Your Life
 ## Medium
 <div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a string&nbsp;<strong>w</strong>, integer array <strong>b,</strong> &nbsp;character array <strong>x&nbsp;</strong>and an integer <strong>n</strong>. <strong>n</strong>&nbsp;is the size of array <strong>b</strong> and array&nbsp;<strong>x</strong>. Find a substring which has the sum of the ASCII values of its every character, as maximum. ASCII values of some characters&nbsp;are redefined.<br>
-<strong>Note:</strong></span><strong>&nbsp;</strong><span style="font-size:18px">Uppercase &amp; lowercase both will be present in the string&nbsp;<strong>w</strong>. Array <strong>b</strong>&nbsp;and Array <strong>x</strong>&nbsp;contain corresponding redefined ASCII values. For each i,&nbsp;0&lt;=ib[i] contain redefined ASCII value of character&nbsp;<strong>x[i]</strong>.</span></p>
+<strong>Note:</strong></span><strong>&nbsp;</strong><span style="font-size:18px">Uppercase &amp; lowercase both will be present in the string&nbsp;<strong>w</strong>. Array <strong>b</strong>&nbsp;and Array <strong>x</strong>&nbsp;contain corresponding redefined ASCII values. For each i, b[i] contain redefined ASCII value of character&nbsp;<strong>x[i]</strong>.</span></p>
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
