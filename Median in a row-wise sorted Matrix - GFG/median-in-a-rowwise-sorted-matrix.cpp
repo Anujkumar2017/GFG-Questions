@@ -10,19 +10,37 @@ using namespace std;
 
 class Solution{   
 public:
+    int binaryMedian(vector<vector<int>>&m, int r, int c){
+        int min=INT_MAX,max=INT_MIN;
+        
+        /* find maximum and minimum of the matrix */
+        for(int i=0;i<r;i++){
+            if(m[i][0]<min)
+                min=m[i][0];
+        
+            if(m[i][c-1]>max)
+                max=m[i][c-1];
+        }
+        
+        int desired=(r*c+1)/2;
+        while(min<max){
+            int mid=min+(max-min)/2;
+            int place=0;
+            
+            for(int i=0;i<r;i++)
+                place+=upper_bound(m[i].begin(),m[i].begin()+c,mid)-m[i].begin();
+                
+            if(place<desired)
+                min=mid+1;
+            else 
+                max=mid;
+        }
+        return min;
+    } 
+
     int median(vector<vector<int>> &mat, int R, int C){
         // code here 
-        int a[R*C],k=0;
-        for(int i=0;i<R;i++){
-            for(int j=0;j<C;j++){
-                a[k]=mat[i][j];
-                k++;
-            }
-        }
-        sort(a,a+R*C);
-        if((R*C)%2==0)
-            return (a[(R*C)/2]+a[(R*C)/2-1])/2;
-        return a[(R*C)/2];
+        return binaryMedian(mat,R,C);
     }
 };
 
