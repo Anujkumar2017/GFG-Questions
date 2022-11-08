@@ -93,10 +93,11 @@ struct Node {
 };
 */
 
+// RNL traversal (similar to LNR)
 void solve(Node* root, vector<int>& v){
     if(root==NULL)
         return;
-    solve(root->right,v);
+    solve(root->right,v);   
     v.push_back(root->data);
     solve(root->left,v);
 }
