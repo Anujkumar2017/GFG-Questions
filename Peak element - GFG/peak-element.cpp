@@ -18,17 +18,18 @@ class Solution
        int s=0,e=n-1;
        int mid;
        
-       while(s<e){
-           mid=s+(e-s)/2;    
+       while(s<=e){
+           mid=s+(e-s)/2; 
            //cout<<s<<" "<<e<<" "<<mid<<"\n";
-           if(arr[mid]<=arr[mid+1]){
+           if( (mid==0 || arr[mid]>=arr[mid-1]) && ( mid==n-1 || arr[mid]>=arr[mid+1] )){
+                break;
+           }else if(arr[mid]<arr[mid+1]){
                s=mid+1;
+           }else if(arr[mid-1]>arr[mid] && mid>0){
+               e=mid-1;
            }
-           else
-                e=mid;
        }
-       
-       return s;
+       return mid;
     }
 };
 
