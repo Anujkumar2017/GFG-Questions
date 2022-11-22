@@ -13,13 +13,20 @@ class Solution{
     // Function to check if given number n is a power of two.
     bool isPowerofTwo(long long n){
         
-        // Your code here
-        if(n==0)
-            return false;
-            
-        if((n&(n-1))==0){
-            return true;
+        // Your code here    
+        /* If number is power of 2 then in binary representation of number it has only 1 set bit. */
+        int set=0;
+        
+        while(n>0){
+            if(n&1==1){
+                set++;
+            }
+            n=n>>1;
         }
+        
+        if(set==1)
+            return true;
+            
         return false;
     }
 };
