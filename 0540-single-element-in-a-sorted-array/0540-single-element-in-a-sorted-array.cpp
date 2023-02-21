@@ -1,18 +1,29 @@
 class Solution {
 public:
-    int singleNonDuplicate(vector<int>& nums) {
-        int left = 0, right = nums.size() - 1;
-        while (left < right) {
-            int mid = (left + right) / 2;
-            if (mid % 2 == 1) {
-                mid--;
-            }
-            if (nums[mid] != nums[mid + 1]) {
-                right = mid;
-            } else {
-                left = mid + 2;
-            }
+    int func(vector<int> nums, int low,int high){
+
+        int mid=(low+high)/2;
+        if(low==high){
+            return low;
         }
-        return nums[left];
+        if(mid%2==0 && nums[mid]==nums[mid+1]){
+            return func(nums,mid+1,high);
+        }
+        else if(mid%2==0 && nums[mid]!=nums[mid+1]){
+            return func(nums,low,mid);
+        }
+        else if(mid%2!=0 && nums[mid]==nums[mid-1]){
+            return func(nums,mid+1,high);
+        }
+        return func(nums,low,mid);
+    }
+
+    int singleNonDuplicate(vector<int>& nums) {
+
+        if(nums.size()==1){
+            return nums[0];
+        }
+        int index= func(nums,0,nums.size()-1);
+        return nums[index];
     }
 };
