@@ -11,24 +11,18 @@
  */
 class Solution {
 public:
-    int longestZigZag(TreeNode* root) {
-        vector<int> res = dfs(root);
-        return res[2];
+    int maxLength=0;
+
+    void solve(TreeNode* root,int dir,int currLength){
+        if(!root) return;
+        maxLength=max(maxLength,currLength);
+        solve(root->left,0,dir?currLength+1:1);
+        solve(root->right,1,dir?1:currLength+1);
     }
-    
-private:
-    vector<int> dfs(TreeNode* node) {
-        if (node == nullptr) {
-            return {-1, -1, -1};
-        }
-        
-        vector<int> leftSubtree = dfs(node->left);
-        vector<int> rightSubtree = dfs(node->right);
-        
-        int leftLength = leftSubtree[1] + 1;
-        int rightLength = rightSubtree[0] + 1;
-        int maxLen = max({leftLength, rightLength, leftSubtree[2], rightSubtree[2]});
-        
-        return {leftLength, rightLength, maxLen};
+
+    int longestZigZag(TreeNode* root) {
+        solve(root,0,0);
+        solve(root,1,0);
+        return maxLength;
     }
 };
