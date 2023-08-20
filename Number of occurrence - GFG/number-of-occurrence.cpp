@@ -1,5 +1,4 @@
 //{ Driver Code Starts
-
 #include<bits/stdc++.h>
 
 using namespace std;
@@ -20,6 +19,7 @@ public:
 	    return last-first;
 	}
 };
+
 
 //{ Driver Code Starts.
 
