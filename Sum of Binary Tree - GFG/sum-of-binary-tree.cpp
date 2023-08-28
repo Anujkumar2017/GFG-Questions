@@ -86,6 +86,6 @@ long int sumBT(Node* root)
 {
     // Code here
     if(root==NULL)
-        return 0LL;
+        return 0;
     return sumBT(root->left)+sumBT(root->right)+root->key;
 }
