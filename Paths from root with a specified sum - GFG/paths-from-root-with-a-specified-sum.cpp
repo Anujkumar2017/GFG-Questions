@@ -97,7 +97,7 @@ struct Node
 class Solution
 {
     public:
-    void solve(int sum, int targetSum, vector<int> v, vector<vector<int>> &ans, Node* root){
+    void solve(int sum, int targetSum, vector<int> &v, vector<vector<int>> &ans, Node* root){
         if(root==NULL) return;
         
         v.push_back(root->key);
@@ -109,6 +109,8 @@ class Solution
         
         solve(sum,targetSum,v,ans,root->left);
         solve(sum,targetSum,v,ans,root->right);
+        
+        v.pop_back();
     }
     
     vector<vector<int>> printPaths(Node *root, int targetSum)
