@@ -138,13 +138,13 @@ class Solution
         //add code here.
         Node* head=newNode(-1);
         Node* prev=head;
-        // cout<<prev->right<<"\n";
+
         solve(root,prev);
+        
         head=head->right;
         head->left=prev;
         prev->right=head;
-        // head->right=head;
-        // head->left=head;
+
         return head;
     }
 };
