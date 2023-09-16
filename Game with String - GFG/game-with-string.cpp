@@ -25,9 +25,7 @@ public:
         while(k--){
             int temp=pq.top();
             pq.pop();
-            
-            if(temp>1)
-                pq.push(temp-1);
+            pq.push(temp-1);
         }
         
         int ans=0;
