@@ -34,7 +34,7 @@ long long int maxSumWithK(long long int arr[], long long int n, long long int k)
     maxSum[0]=csum;
     
     for(int i=1; i<n; i++){
-        if(csum>0){
+        if(csum>=0){
             csum+=arr[i];
         }else{
             csum=arr[i];
