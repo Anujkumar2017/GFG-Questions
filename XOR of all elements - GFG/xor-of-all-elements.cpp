@@ -10,15 +10,15 @@ public:
     {
         // Write your Code here
         int xorr=0;
-        vector<int> v;
+        // vector<int> v;
         
         for(int i=0; i<N; i++) xorr^=A[i];
         
         for(int i=0; i<N; i++){
-            v.push_back(xorr^A[i]);
+            A[i]=(xorr^A[i]);
         }
         
-        return v;
+        return A;
     }
 };
 
