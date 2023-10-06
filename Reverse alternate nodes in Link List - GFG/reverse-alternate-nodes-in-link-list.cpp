@@ -99,11 +99,10 @@ class Solution
                 if(evenTail==NULL){
                     evenTail=temp;
                     evenHead=temp;
-                    
-                    temp=temp->next;
-                    
-                    evenHead->next=NULL;
                 
+                    temp=temp->next;
+                    evenHead->next=NULL;
+    
                 }else{
                     Node* t=temp->next;
                     
