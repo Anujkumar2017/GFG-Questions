@@ -11,26 +11,23 @@ class Solution{
     {
         // code here
         int ans=N;
-        int bitsetinX=0;
-        
-        for(int i=30;i>=0;i--){
-            if(X&(1<<i)){
-                //useless
-                bitsetinX=bitsetinX|(1<<i);
+        int bitSetInX=0;
+        for(int i=30; i>=0; i--){
+            if((1<<i)&X){
+                bitSetInX |=(1<<i);
             }else{
-                int temp= bitsetinX|(1<<i);
-                
-                int donotmodify=0;
+                int temp = bitSetInX | (1<<i);
+                int modify=0;
                 for(int number:A){
-                    if((temp&number)==temp){
-                        donotmodify++;
+                    if((number&temp)!=temp){
+                        modify++;
                     }
                 }
-                ans=min(ans,N-donotmodify);
+                ans=min(ans,modify);
             }
         }
-        return ans;
         
+        return ans;
     }
 };
 
